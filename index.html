@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>E-LIBRARY UMTS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2c7be5;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .label-simulasi {
+            background: #ffc107;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .product {
+            display: flex;
+            gap: 20px;
+        }
+        .product img {
+            width: 180px;
+            border-radius: 5px;
+        }
+        .price {
+            color: green;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 15px;
+            background: #2c7be5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1a5dcc;
+        }
+        .receipt {
+            display: none;
+            margin-top: 30px;
+            border-top: 2px dashed #ccc;
+            padding-top: 20px;
+        }
+        .receipt h3 {
+            text-align: center;
+        }
+        .receipt-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .receipt-table td {
+            padding: 8px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Logo" style="height:60px;">
+    <h1>UNIVERSITAS MUHAMMADIYAH TAPANULI SELATAN</h1>
+    <p>E-library UMTS</p>
+</header>
+
+<div class="container">
+    <div class="label-simulasi">
+        PEMBELIAN BUKU SEMINAR PENGAJARAN PPKn
+    </div>
+
+    <div class="product">
+        <img src="buku.jpg" alt="Buku Seminar Pengajaran PPKn">
+        <div>
+            <h2>Buku SEMINAR PENGAJARAN PPKN</h2>
+            <p>Penerbit: Media Pusaka Cipta</p>
+            <p class="price">Rp 66.000</p>
+            <button onclick="showReceipt()">Beli Sekarang</button>
+        </div>
+    </div>
+
+    <div class="receipt" id="receipt">
+        <h3>Bukti Pembayaran</h3>
+        <table class="receipt-table">
+            <tr>
+                <td>Nama Pembeli</td>
+                <td>: Flery Batami</td>
+            </tr>
+            <tr>
+                <td>Produk</td>
+                <td>: Buku Perkembangan Peserta Didik</td>
+            </tr>
+            <tr>
+                <td>Harga</td>
+                <td>: Rp 85.000</td>
+            </tr>
+            <tr>
+                <td>Metode Pembayaran</td>
+                <td>: Transfer Bank BRI</td>
+            </tr>
+            <tr>
+                <td>Tanggal</td>
+                <td>: <span id="08/12/2025"></span></td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td>: <b>BERHASIL</b></td>
+            </tr>
+        </table>
+        <p style="margin-top:15px; font-size:13px;">
+            Catatan: Bukti ini digunakan untuk mewakili transaksi.
+        </p>
+    </div>
+
+    <div class="footer">
+        © 2025 E-Library UMTS
+    </div>
+</div>
+
+<script>
+    function showReceipt() {
+        document.getElementById("receipt").style.display = "block";
+        const today = new Date();
+        document.getElementById("date").innerText = today.toLocaleDateString("id-ID");
+    }
+</script>
+
+</body>
+</html>
